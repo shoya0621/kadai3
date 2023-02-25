@@ -8,16 +8,13 @@
   <%= f.submit 'CreateBook' %>
 <% end %>
 
-
-<h1>Books</h1>
-<% @books.each do |book| %>
- <div>
-  <p>Title</p>
-  <%= link_to book_path(book.id) do %>
-    <span><%= book.title %></span>
-  <% end %>
-  <p>Opinion</p>
-    <span><%= book.opinion %></span>
+<h1>Users</h1>
+<%= @users.each do |user| %>
+  <div>
+  <p>image</p>
+    <%= image_tag user.get_image %>
+  
+  <p>name</p>
+    <span><%= user.name %></span>
  </div>
- 
 <% end %>
