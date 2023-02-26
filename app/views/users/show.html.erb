@@ -1,11 +1,14 @@
-<h1>New Book</h1>
-<%= form_with model: @book do |f| %>
-  <h4>Title</h4>
-   <%= f.text_field :title %>
-  
-  <h4>Opinion</h4>
-   <%= f.text_area :opinion %>
-  <%= f.submit 'CreateBook' %>
+<%= render 'list', book: @book %>
+
+<h1>Books</h1>
+<%= @books.each do |book| %>
+  <div>
+  <p>Title</p>
+   <%= link_to book_path(book.id) do %>
+    <%= book.title %>
+   <% end %>
+   
+  <p>Opinion</p>
+    <span><%= book.opinion %></span>
+ </div>
 <% end %>
-
-
