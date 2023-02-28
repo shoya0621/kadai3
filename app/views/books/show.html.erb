@@ -1,4 +1,4 @@
-<%= render 'users/list', book: @book %>
+<%= render 'users/list', user: @user, book: @book %>
 
 <h1>Book detail</h1>
  <div>
@@ -9,7 +9,7 @@
   <p>Title</p>
   <span><%= @book_show.title %></span>
   <p>Opinion</p>
-  <span><%= @book_show.opinion %></span>
+  <span><%= @book_show.body %></span>
   <% if @book_show.user == current_user %>
     <%= link_to "Edit" , edit_book_path(@book_show.id) %>
     <%= link_to "Destroy", book_path(@book_show.id), method: :delete %>

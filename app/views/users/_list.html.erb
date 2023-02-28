@@ -1,11 +1,11 @@
 <h1>User info</h1>
-  <%= image_tag current_user.get_profile_image %>
+  <%= image_tag user.get_profile_image %>
  <p>name</p>
-  <%= current_user.name %>
+  <%= user.name %>
  <p>introduction</p>
-  <%= current_user.introduction %>
+  <%= user.introduction %>
   
-  <%= link_to "編集", edit_user_path(current_user.id) %>
+  <%= link_to "編集", edit_user_path(user.id) %>
 
 <h1>New Book</h1>
 <%= form_with model: book do |f| %>
@@ -13,6 +13,6 @@
    <%= f.text_field :title %>
   
   <h4>Opinion</h4>
-   <%= f.text_area :opinion %>
+   <%= f.text_area :body %>
   <%= f.submit 'CreateBook' %>
 <% end %>

@@ -1,4 +1,4 @@
-<%= render 'list', book: @book %>
+<%= render 'list', user: @user, book: @book %>
 
 <h1>Books</h1>
 <% @books.each do |book| %>
@@ -10,6 +10,6 @@
    <% end %>
    
   <p>Opinion</p>
-    <span><%= book.opinion %></span>
+    <span><%= book.body %></span>
  </div>
 <% end %>

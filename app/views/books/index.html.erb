@@ -1,4 +1,4 @@
-<%= render 'users/list', book: @book %>
+<%= render 'users/list', user: current_user, book: @book %>
 
 
 <h1>Books</h1>
@@ -11,7 +11,7 @@
     <span><%= book.title %></span>
   <% end %>
   <p>Opinion</p>
-    <span><%= book.opinion %></span>
+    <span><%= book.body %></span>
  </div>
  
 <% end %>
