@@ -1,8 +1,9 @@
 <%= render 'list', book: @book %>
 
 <h1>Books</h1>
-<%= @books.each do |book| %>
+<% @books.each do |book| %>
   <div>
+  <%= image_tag book.user.get_profile_image %>
   <p>Title</p>
    <%= link_to book_path(book.id) do %>
     <%= book.title %>
