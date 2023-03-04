@@ -1,5 +1,7 @@
 <%= render 'list', user: @user, book: @book %>
-<%= flash[:notice] %>
+<%= render 'notification' %>
+
+
 <h1>Books</h1>
 <% @books.each do |book| %>
   <div>

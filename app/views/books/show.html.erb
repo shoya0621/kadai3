@@ -1,5 +1,5 @@
 <%= render 'users/list', user: @user, book: @book %>
-<%= flash[:notice] %>
+<%= render 'users/notification' %>
 <h1>Book detail</h1>
  <div>
   <%= image_tag @book_show.user.get_profile_image %>
