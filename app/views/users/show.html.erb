@@ -1,17 +1,39 @@
-<%= render 'list', user: @user, book: @book %>
+<main>
 <%= render 'notification' %>
+ <div class="container px-5 px-sm-0">
+  <%= render 'books/notice', book: @book %>
+  <div class="row">
+   <%= render 'list', user: @user, book: @book %>
 
 
-<h1>Books</h1>
-<% @books.each do |book| %>
-  <div>
-  <%= image_tag book.user.get_profile_image %>
-  <p>Title</p>
-   <%= link_to book_path(book.id) do %>
-    <%= book.title %>
-   <% end %>
-   
-  <p>Opinion</p>
-    <span><%= book.body %></span>
+   <div class="col-md-8 offset-md-1">
+    <h2>Books</h2>
+     
+     <table class="table">
+      <thead>
+       <tr>
+        <th scope="col"></th>
+        <th scope="col">Title</th>
+        <th scope="col">Opinion</th>
+       </tr>  
+      </thead>
+      <% @books.each do |book| %>
+      <tbody>
+       <tr>
+        <td><%= image_tag book.user.get_profile_image %></td>
+        <td>
+         <%= link_to book_path(book.id) do %>
+          <%= book.title %>
+         <% end %>
+        </td>
+        <td><%= book.body %></td>
+       </tr>
+      </tbody>
+      <% end %>
+     </table>
+     
+   </div>
+
+  </div>
  </div>
-<% end %>
+</main>

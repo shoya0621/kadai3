@@ -1,14 +1,30 @@
-<%= render 'list', user: current_user, book: @book %>
-
-<h1>Users</h1>
-<% @users.each do |user| %>
-  <div>
-  <p>image</p>
-    <%= image_tag user.get_profile_image %>
-  
-  <p>name</p>
-    <span><%= user.name %></span>
-    
-  <%= link_to "Show",user_path(user.id) %>
+<main>
+ <div class="container px-5 px-sm-0">
+  <%= render 'books/notice', book: @book %>
+  <div class="row">
+   <%= render 'list', user: current_user, book: @book %>
+   
+   <div class="col-md-8 offset-md-1">
+   <h2>Users</h2>
+   <table class="table">
+    <thead>
+     <tr>
+      <th scope="col">image</th>
+      <th scope="col">name</th>
+      <th scope="col"></th> 
+     </tr>  
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+     <tr>
+      <td><%= image_tag user.get_profile_image %></td> 
+      <td><%= user.name %></td> 
+      <td><%= link_to "Show",user_path(user.id) %></td> 
+     </tr>
+    <% end %>
+    </tbody>
+   </table>
+   </div>
+  </div>
  </div>
-<% end %>
+</main>
